@@ -1,0 +1,484 @@
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (master)
+$ git log
+fatal: your current branch 'master' does not have any commits yet
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (master)
+$ git pull
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/DPK101/gitcommandspractice
+ * [new branch]      master     -> origin/master
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (master)
+$ ls
+README.md
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (master)
+$ git log
+commit c6ae197c15ed653ddf0b03b31632e03499bab81c (HEAD -> master, origin/master)
+Author: Deepak <DPK101@users.noreply.github.com>
+Date:   Sun Mar 18 19:28:44 2018 +0530
+
+    Create README.md
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (master)
+$ git pull -v --progress
+From https://github.com/DPK101/gitcommandspractice
+ = [up to date]      master     -> origin/master
+Already up to date.
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (master)
+$ echo "Lets create a branch for this master!" >> createBranchAfterThis.txt
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (master)
+$ ls
+createBranchAfterThis.txt  README.md
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        createBranchAfterThis.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (master)
+$ git add --all
+warning: LF will be replaced by CRLF in createBranchAfterThis.txt.
+The file will have its original line endings in your working directory.
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (master)
+$ git status --stage
+error: unknown option `stage'
+usage: git status [<options>] [--] <pathspec>...
+
+    -v, --verbose         be verbose
+    -s, --short           show status concisely
+    -b, --branch          show branch information
+    --show-stash          show stash information
+    --ahead-behind        compute full ahead/behind values (EXPERIMENTAL)
+    --porcelain[=<version>]
+                          machine-readable output
+    --long                show status in long format (default)
+    -z, --null            terminate entries with NUL
+    -u, --untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+    --ignored[=<mode>]    show ignored files, optional modes: traditional, matching, no. (Default: traditional)
+    --ignore-submodules[=<when>]
+                          ignore changes to submodules, optional when: all, dirty, untracked. (Default: all)
+    --column[=<style>]    list untracked files in columns
+    --show-ignored-directory
+                          (DEPRECATED: use --ignore=matching instead) Only show directories that match an ignore pattern name.
+    --no-lock-index       (DEPRECATED: use `git --no-optional-locks status` instead) Do not lock the index
+
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (master)
+$ git help
+usage: git [--version] [--help] [-C <path>] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone      Clone a repository into a new directory
+   init       Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add        Add file contents to the index
+   mv         Move or rename a file, a directory, or a symlink
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect     Use binary search to find the commit that introduced a bug
+   grep       Print lines matching a pattern
+   log        Show commit logs
+   show       Show various types of objects
+   status     Show the working tree status
+
+grow, mark and tweak your common history
+   branch     List, create, or delete branches
+   checkout   Switch branches or restore working tree files
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   merge      Join two or more development histories together
+   rebase     Reapply commits on top of another base tip
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch      Download objects and refs from another repository
+   pull       Fetch from and integrate with another repository or a local branch
+   push       Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   createBranchAfterThis.txt
+
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (master)
+$ git commit -m -v --progress "Adding a new file to master"
+error: unknown option `progress'
+usage: git commit [<options>] [--] <pathspec>...
+
+    -q, --quiet           suppress summary after successful commit
+    -v, --verbose         show diff in commit message template
+
+Commit message options
+    -F, --file <file>     read message from file
+    --author <author>     override author for commit
+    --date <date>         override date for commit
+    -m, --message <message>
+                          commit message
+    -c, --reedit-message <commit>
+                          reuse and edit message from specified commit
+    -C, --reuse-message <commit>
+                          reuse message from specified commit
+    --fixup <commit>      use autosquash formatted message to fixup specified commit
+    --squash <commit>     use autosquash formatted message to squash specified commit
+    --reset-author        the commit is authored by me now (used with -C/-c/--amend)
+    -s, --signoff         add Signed-off-by:
+    -t, --template <file>
+                          use specified template file
+    -e, --edit            force edit of commit
+    --cleanup <default>   how to strip spaces and #comments from message
+    --status              include status in commit message template
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+
+Commit contents options
+    -a, --all             commit all changed files
+    -i, --include         add specified files to index for commit
+    --interactive         interactively add files
+    -p, --patch           interactively add changes
+    -o, --only            commit only specified files
+    -n, --no-verify       bypass pre-commit and commit-msg hooks
+    --dry-run             show what would be committed
+    --short               show status concisely
+    --branch              show branch information
+    --ahead-behind        compute full ahead/behind values (EXPERIMENTAL)
+    --porcelain           machine-readable output
+    --long                show status in long format (default)
+    -z, --null            terminate entries with NUL
+    --amend               amend previous commit
+    --no-post-rewrite     bypass post-rewrite hook
+    -u, --untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (master)
+$ git commit -m -v "Adding a new file to master"
+error: pathspec 'Adding a new file to master' did not match any file(s) known to git.
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (master)
+$ git commit -m "Adding a new file to master" *.txt
+warning: LF will be replaced by CRLF in createBranchAfterThis.txt.
+The file will have its original line endings in your working directory.
+[master e7473b4] Adding a new file to master
+ 1 file changed, 1 insertion(+)
+ create mode 100644 createBranchAfterThis.txt
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (master)
+$ git status --stage
+error: unknown option `stage'
+usage: git status [<options>] [--] <pathspec>...
+
+    -v, --verbose         be verbose
+    -s, --short           show status concisely
+    -b, --branch          show branch information
+    --show-stash          show stash information
+    --ahead-behind        compute full ahead/behind values (EXPERIMENTAL)
+    --porcelain[=<version>]
+                          machine-readable output
+    --long                show status in long format (default)
+    -z, --null            terminate entries with NUL
+    -u, --untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+    --ignored[=<mode>]    show ignored files, optional modes: traditional, matching, no. (Default: traditional)
+    --ignore-submodules[=<when>]
+                          ignore changes to submodules, optional when: all, dirty, untracked. (Default: all)
+    --column[=<style>]    list untracked files in columns
+    --show-ignored-directory
+                          (DEPRECATED: use --ignore=matching instead) Only show directories that match an ignore pattern name.
+    --no-lock-index       (DEPRECATED: use `git --no-optional-locks status` instead) Do not lock the index
+
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (master)
+$ git --stage
+Unknown option: --stage
+usage: git [--version] [--help] [-C <path>] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (master)
+$ git push
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 354 bytes | 354.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/DPK101/gitcommandspractice.git
+   c6ae197..e7473b4  master -> master
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (master)
+$ git log
+commit e7473b44e8cb918f8a7d6c692c1584fcd690f759 (HEAD -> master, origin/master)
+Author: Deepak <DPK101@users.noreply.github.com>
+Date:   Sun Mar 18 19:38:11 2018 +0530
+
+    Adding a new file to master
+
+commit c6ae197c15ed653ddf0b03b31632e03499bab81c
+Author: Deepak <DPK101@users.noreply.github.com>
+Date:   Sun Mar 18 19:28:44 2018 +0530
+
+    Create README.md
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (master)
+$ ls
+createBranchAfterThis.txt  README.md
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (master)
+$ vi createBranchAfterThis.txt
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (master)
+$ git branch
+* master
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (master)
+$ git show
+commit e7473b44e8cb918f8a7d6c692c1584fcd690f759 (HEAD -> master, origin/master)
+Author: Deepak <DPK101@users.noreply.github.com>
+Date:   Sun Mar 18 19:38:11 2018 +0530
+
+    Adding a new file to master
+
+diff --git a/createBranchAfterThis.txt b/createBranchAfterThis.txt
+new file mode 100644
+index 0000000..58fd2e0
+--- /dev/null
++++ b/createBranchAfterThis.txt
+@@ -0,0 +1 @@
++Lets create a branch for this master!
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (master)
+$ git log
+commit e7473b44e8cb918f8a7d6c692c1584fcd690f759 (HEAD -> master, origin/master)
+Author: Deepak <DPK101@users.noreply.github.com>
+Date:   Sun Mar 18 19:38:11 2018 +0530
+
+    Adding a new file to master
+
+commit c6ae197c15ed653ddf0b03b31632e03499bab81c
+Author: Deepak <DPK101@users.noreply.github.com>
+Date:   Sun Mar 18 19:28:44 2018 +0530
+
+    Create README.md
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (master)
+$ git branch test-branch
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (master)
+$ git branch
+* master
+  test-branch
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (master)
+$ git checkout test-branch
+FETCH_HEAD      HEAD            master          ORIG_HEAD       origin/master   test-branch
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (master)
+$ git checkout test-branch
+Switched to branch 'test-branch'
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (test-branch)
+$ git branch
+  master
+* test-branch
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (test-branch)
+$ ls
+createBranchAfterThis.txt  README.md
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (test-branch)
+$ echo "This line is added after the branch is created from master." >> createdTestBranchFromMaster.txt
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (test-branch)
+$ git status
+On branch test-branch
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        createdTestBranchFromMaster.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (test-branch)
+$ git add --all
+warning: LF will be replaced by CRLF in createdTestBranchFromMaster.txt.
+The file will have its original line endings in your working directory.
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (test-branch)
+$ git status
+On branch test-branch
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   createdTestBranchFromMaster.txt
+
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (test-branch)
+$ git commit -m "First commit on branch created from master. Super excited!"
+[test-branch 82bb3cf] First commit on branch created from master. Super excited!
+ 1 file changed, 1 insertion(+)
+ create mode 100644 createdTestBranchFromMaster.txt
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (test-branch)
+$ git status
+On branch test-branch
+nothing to commit, working tree clean
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (test-branch)
+$ git push
+fatal: The current branch test-branch has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin test-branch
+
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (test-branch)
+$ git status
+On branch test-branch
+nothing to commit, working tree clean
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (test-branch)
+$ git log
+commit 82bb3cfa6e6a2483a184ec1ac4ee3b354f99b3f1 (HEAD -> test-branch)
+Author: Deepak <DPK101@users.noreply.github.com>
+Date:   Sun Mar 18 20:08:14 2018 +0530
+
+    First commit on branch created from master. Super excited!
+
+commit e7473b44e8cb918f8a7d6c692c1584fcd690f759 (origin/master, master)
+Author: Deepak <DPK101@users.noreply.github.com>
+Date:   Sun Mar 18 19:38:11 2018 +0530
+
+    Adding a new file to master
+
+commit c6ae197c15ed653ddf0b03b31632e03499bab81c
+Author: Deepak <DPK101@users.noreply.github.com>
+Date:   Sun Mar 18 19:28:44 2018 +0530
+
+    Create README.md
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (test-branch)
+$ git branch
+  master
+* test-branch
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (test-branch)
+$ git status
+On branch test-branch
+nothing to commit, working tree clean
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (test-branch)
+$ git commit
+On branch test-branch
+nothing to commit, working tree clean
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (test-branch)
+$ git push
+fatal: The current branch test-branch has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin test-branch
+
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (test-branch)
+$ git push --set-upstream origin test-branch
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 433 bytes | 433.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/DPK101/gitcommandspractice.git
+ * [new branch]      test-branch -> test-branch
+Branch 'test-branch' set up to track remote branch 'test-branch' from 'origin'.
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (test-branch)
+$ git status
+On branch test-branch
+Your branch is up to date with 'origin/test-branch'.
+
+nothing to commit, working tree clean
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (test-branch)
+$ git log
+commit 82bb3cfa6e6a2483a184ec1ac4ee3b354f99b3f1 (HEAD -> test-branch, origin/test-branch)
+Author: Deepak <DPK101@users.noreply.github.com>
+Date:   Sun Mar 18 20:08:14 2018 +0530
+
+    First commit on branch created from master. Super excited!
+
+commit e7473b44e8cb918f8a7d6c692c1584fcd690f759 (origin/master, master)
+Author: Deepak <DPK101@users.noreply.github.com>
+Date:   Sun Mar 18 19:38:11 2018 +0530
+
+    Adding a new file to master
+
+commit c6ae197c15ed653ddf0b03b31632e03499bab81c
+Author: Deepak <DPK101@users.noreply.github.com>
+Date:   Sun Mar 18 19:28:44 2018 +0530
+
+    Create README.md
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (test-branch)
+$ git diff
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (test-branch)
+$ ls
+createBranchAfterThis.txt  createdTestBranchFromMaster.txt  README.md
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (test-branch)
+$ git branch
+  master
+* test-branch
+
+GHOST@DESKTOP-2T81SNU MINGW64 ~/Documents/GitHub/gitcommandspractice (test-branch)
+$
+
